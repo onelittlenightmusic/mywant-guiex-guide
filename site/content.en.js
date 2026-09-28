@@ -300,6 +300,73 @@ ${shot('kata-detail.jpg', 'Press a kata to see what to combine (its waza) and wh
       ],
     },
     {
+      id: 'on-tabs',
+      title: 'On your browser tabs',
+      note: 'With the browser extension, on the sites you already use',
+      icon: 'app-window',
+      topics: [
+        {
+          id: 'aura-jump',
+          title: 'Jump between aura marks',
+          sub: 'Mark with X, then hop with the arrows',
+          icon: 'locate-fixed',
+          color: '#a855f7',
+          body: `
+<p>On a site, put your character over a search box or a button and press <code>X</code>: that part gets an <strong>aura mark</strong>.
+Once parts are marked, <strong>the directional buttons hop from mark to mark</strong> — no walking needed to stand on the parts you use.</p>
+<h4>Hop</h4>
+<dl class="terms">
+  <dt>Gamepad</dt><dd>The D-pad, up / down / left / right</dd>
+  <dt>Keyboard</dt><dd><code>Cmd + ↑ / ↓ / ← / →</code></dd>
+</dl>
+<p>It lands on the nearest mark in that direction. The part lights up and its card in the sidebar is ringed too; <code>Enter</code> presses it.</p>
+<h4>Next time too</h4>
+<p>Save it from the sidebar, and the marks come back the next time you open the site.</p>
+<div class="box">
+  <p class="box-title"><i data-lucide="mouse-pointer-2"></i>Plain arrows walk</p>
+  <p>On the keyboard, the arrow keys alone walk the character freely; add <code>Cmd</code> to hop to a mark.</p>
+</div>
+`,
+        },
+        {
+          id: 'pill-cursor',
+          title: 'Open the pill, and your character comes',
+          sub: 'Fold it, and the keys are the site’s again',
+          icon: 'panel-top-open',
+          color: '#22c55e',
+          body: `
+<p>With the browser extension, a small <strong>control pill</strong> floats on every site. It starts folded: only the way back to MyWant and the status sign show.</p>
+<dl class="terms">
+  <dt>Open it</dt><dd>Your character appears on the site; the arrow keys and the gamepad move it</dd>
+  <dt>Fold it</dt><dd>Your character leaves the site; the arrow keys and <code>Enter</code> belong to the site again, as usual</dd>
+</dl>
+<p>Press the status sign to open or fold it. Once opened, it stays open on the next site too.</p>
+<p>When your character arrives some other way (from another tab, or with Save), the pill opens with it — a character on the page can always be steered.</p>
+`,
+        },
+        {
+          id: 'pill-lamp',
+          title: 'Rest easy by the folded pill’s colour',
+          sub: 'Not called, no need to come back',
+          icon: 'lamp',
+          color: '#f59e0b',
+          body: `
+<p>The MyWant screen is not somewhere to keep watch; it is somewhere to come back to when you like. While you are on other sites, the <strong>colour of the folded pill’s status sign</strong> tells you whether you need to.</p>
+<dl class="terms">
+  <dt>Green</dt><dd>Nothing is waiting for you. No need to come back</dd>
+  <dt>Orange text</dt><dd>Something is waiting for you (an approval, a failure, a login…). Open the pill and its call button takes you there</dd>
+  <dt>Orange fill</dt><dd>You paused everything yourself</dd>
+  <dt>Grey</dt><dd>MyWant cannot be reached</dd>
+</dl>
+<div class="box">
+  <p class="box-title"><i data-lucide="bell-off"></i>Some things never call</p>
+  <p>Checks made so as never to stop what you are doing (such as checking a reservation) do not call you, even when a login has lapsed.</p>
+</div>
+`,
+        },
+      ],
+    },
+    {
       id: 'more',
       title: 'Going further',
       note: 'Once you are used to it',
