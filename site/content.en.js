@@ -247,7 +247,7 @@ Walk it there with a gamepad or the arrow keys, and point at buttons and fields.
   <dt>Gamepad</dt><dd>Hold B and press L1 / R1</dd>
   <dt>Keyboard</dt><dd><code>Cmd + Shift + Option + ← / →</code></dd>
 </dl>
-<p>A small picker appears: go to the leftmost, left, right or rightmost tab. On other sites, L2 / R2 open the same picker.</p>
+<p>A small picker appears: go to the leftmost, left, right or rightmost tab. The same on other sites.</p>
 <h4>What you can do on other sites</h4>
 <ul>
   <li>Record parts with <code>X</code> and make a Web Want (see "Web Wants")</li>
@@ -320,12 +320,45 @@ Once parts are marked, <strong>the directional buttons hop from mark to mark</st
   <dt>Keyboard</dt><dd><code>Cmd + ↑ / ↓ / ← / →</code></dd>
 </dl>
 <p>It lands on the nearest mark in that direction. The part lights up and its card in the sidebar is ringed too; <code>Enter</code> presses it.</p>
+<p>On a gamepad, hold R2 and aim anywhere with the left stick: the nearest mark along that line lights up, and letting go of R2 jumps there.</p>
+<p>On a phone, drag your character toward a mark to jump to it. With the pill’s Mode on Cmd, aim any way you like.</p>
 <h4>Next time too</h4>
 <p>Save it from the sidebar, and the marks come back the next time you open the site.</p>
 <div class="box">
   <p class="box-title"><i data-lucide="mouse-pointer-2"></i>Plain arrows walk</p>
   <p>On the keyboard, the arrow keys alone walk the character freely; add <code>Cmd</code> to hop to a mark.</p>
 </div>
+`,
+        },
+        {
+          id: 'aura-constellation',
+          title: 'Join marks into a constellation',
+          sub: 'Hold Z, and follow the joins',
+          icon: 'waypoints',
+          color: '#f59e0b',
+          body: `
+<p>Aura marks can be joined by lines into a <strong>constellation</strong> — the same way as Y connect on the canvas.
+Once they are joined, holding Z turns the directions into <strong>jumps along the joins</strong>: walk through parts you always use in the same order, like search → cart → buy.</p>
+<h4>Join</h4>
+<ol class="steps">
+  <li><strong>Y on a mark</strong><br />A line starts there and follows you as you walk.</li>
+  <li><strong>Walk to the next mark and press Y</strong><br />Add as many as you like. Y again on the newest one takes just that one off.</li>
+  <li><strong>Enter (A on a gamepad) to name it and make it</strong><br />Escape (B) drops the whole line.</li>
+</ol>
+<p>Then Save it from the sidebar, with the marks; it comes back the next time you open the site.</p>
+<h4>Follow</h4>
+<dl class="terms">
+  <dt>Keyboard</dt><dd>Hold <code>Z</code> and press the arrow keys</dd>
+  <dt>Gamepad</dt><dd>Hold L2 and press the D-pad (the canvas's Z mode)</dd>
+</dl>
+<p>Holding Z shows where the mark you stand on is joined to, by name, up / down / left / right. Press a direction to jump there.</p>
+<p>On a gamepad, hold L2 and tilt the left stick: an arrow appears and the destination that way lights up. Let go of L2 to jump there (or press A while holding, and keep aiming from where you land).</p>
+<h4>On a phone</h4>
+<p>Open the pill and press <strong>Mode</strong>: it steps none → Z → Cmd → Y (the canvas’s mode lamp).</p>
+<ul>
+  <li><strong>Y</strong>: tap marks to tie the line to them, then name it with the confirm button by your character</li>
+  <li><strong>Z</strong>: drag your character to aim, and let go to jump along the joins</li>
+</ul>
 `,
         },
         {
