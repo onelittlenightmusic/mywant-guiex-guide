@@ -175,7 +175,7 @@ ${shot('canvas.jpg', 'With the minimap open')}
   <dt>Y</dt><dd>To the header's buttons</dd>
   <dt>Hold B</dt><dd>Show the direction and distance guide</dd>
 </dl>
-<p>The <strong>MODE</strong> lamp in the header shows which jump mode is on.</p>
+<p>The <strong>MODE</strong> lamp in the pill shows which jump mode is on, and pressing it switches (see "Cross in Z mode").</p>
 ${shot('help-gamepad.jpg', '"Gamepad Layout" in Help (the ? key) has a picture of the buttons')}
 <div class="box">
   <p class="box-title"><i data-lucide="lock"></i>So nothing moves by accident</p>
@@ -302,9 +302,37 @@ ${shot('kata-detail.jpg', 'Press a kata to see what to combine (its waza) and wh
     {
       id: 'on-tabs',
       title: 'On your browser tabs',
-      note: 'With the browser extension, on the sites you already use',
+      note: 'With the browser extension (or the bookmarklet), on the sites you already use',
       icon: 'app-window',
       topics: [
+        {
+          id: 'pill-cursor',
+          title: 'The pill, Browse and Canvas',
+          sub: 'The page as it is, or moved through like the board',
+          icon: 'panel-top-open',
+          color: '#22c55e',
+          body: `
+<p>With the browser extension, a small <strong>control pill</strong> floats on every site.</p>
+<dl class="terms">
+  <dt>Folded</dt><dd><code>WARP | BROWSE | ›</code>. WARP takes you back to MyWant; the <code>›</code> at the right end opens it</dd>
+  <dt>Open</dt><dd><code>WARP | BROWSE | PAUSE | MODE | NEWS | … | SAVE | ‹</code>. <code>‹</code> folds it</dd>
+</dl>
+<h4>Browse and Canvas</h4>
+<p>Press <strong>BROWSE</strong> to switch to <strong>CANVAS</strong> (and again to switch back) — folded or not.</p>
+<dl class="terms">
+  <dt>Browse</dt><dd>The page stays the page. Your character comes while the pill is open and leaves when it is folded</dd>
+  <dt>Canvas</dt><dd>The page is treated like the board: your character stays even with the pill folded, aura marks are shaded, constellations are drawn, and Z mode, the arrow keys, the gamepad and your finger all reach the character</dd>
+</dl>
+<p>In Canvas, marking with X or a long press never opens the sidebar, so on a phone the page stays in view.</p>
+<h4>With a finger</h4>
+<dl class="terms">
+  <dt>Tap</dt><dd>Your character walks there (the page's button is not pressed)</dd>
+  <dt>Long press</dt><dd>Mark that part, or take its mark off</dd>
+  <dt>Drag the character</dt><dd>It hops to the mark that way (with MODE on Z or Cmd, aim and let go)</dd>
+</dl>
+<p>In Browse with the pill folded, a tap is the page's as usual.</p>
+`,
+        },
         {
           id: 'aura-jump',
           title: 'Jump between aura marks',
@@ -312,82 +340,79 @@ ${shot('kata-detail.jpg', 'Press a kata to see what to combine (its waza) and wh
           icon: 'locate-fixed',
           color: '#a855f7',
           body: `
-<p>On a site, put your character over a search box or a button and press <code>X</code>: that part gets an <strong>aura mark</strong>.
-Once parts are marked, <strong>the directional buttons hop from mark to mark</strong> — no walking needed to stand on the parts you use.</p>
+<p>On a site, put your character over a search box or a button and press <code>X</code> (a long press on a phone): that part gets an <strong>aura mark</strong>.
+Once parts are marked, <strong>the directions hop from mark to mark</strong>.</p>
 <h4>Hop</h4>
 <dl class="terms">
-  <dt>Gamepad</dt><dd>The D-pad, up / down / left / right</dd>
-  <dt>Keyboard</dt><dd><code>Cmd + ↑ / ↓ / ← / →</code></dd>
+  <dt>Gamepad</dt><dd>The D-pad</dd>
+  <dt>Keyboard</dt><dd>In Canvas, the arrow keys alone. In Browse, <code>Cmd + ↑ / ↓ / ← / →</code> (plain arrows walk freely)</dd>
+  <dt>Any direction</dt><dd>Hold R2 and aim with the left stick; let go of R2 to land on the nearest mark along the line (with the pill's MODE on Cmd, drag the character to do the same)</dd>
 </dl>
-<p>It lands on the nearest mark in that direction. The part lights up and its card in the sidebar is ringed too; <code>Enter</code> presses it.</p>
-<p>On a gamepad, hold R2 and aim anywhere with the left stick: the nearest mark along that line lights up, and letting go of R2 jumps there.</p>
-<p>On a phone, drag your character toward a mark to jump to it. With the pill’s Mode on Cmd, aim any way you like.</p>
+<p>It lands on the nearest mark that way, and the page scrolls up or down so that mark is near the middle of the screen (never sideways). The part lights up; <code>Enter</code> presses it.</p>
 <h4>Next time too</h4>
-<p>Save it from the sidebar, and the marks come back the next time you open the site.</p>
-<div class="box">
-  <p class="box-title"><i data-lucide="mouse-pointer-2"></i>Plain arrows walk</p>
-  <p>On the keyboard, the arrow keys alone walk the character freely; add <code>Cmd</code> to hop to a mark.</p>
-</div>
+<p>Save it from the sidebar, and the marks come back the next time you open the site. Hovering a card in the sidebar frames its part on the page.</p>
 `,
         },
         {
           id: 'aura-constellation',
           title: 'Join marks into a constellation',
-          sub: 'Hold Z, and follow the joins',
+          sub: 'Tie a line with Y, and name it',
           icon: 'waypoints',
           color: '#f59e0b',
           body: `
 <p>Aura marks can be joined by lines into a <strong>constellation</strong> — the same way as Y connect on the canvas.
-Once they are joined, holding Z turns the directions into <strong>jumps along the joins</strong>: walk through parts you always use in the same order, like search → cart → buy.</p>
+Once joined, <strong>Z mode walks you along the joins</strong> (see "Cross in Z mode") — handy for parts you always use in the same order, like search → cart → buy.</p>
 <h4>Join</h4>
 <ol class="steps">
   <li><strong>Y on a mark</strong><br />A line starts there and follows you as you walk.</li>
   <li><strong>Walk to the next mark and press Y</strong><br />Add as many as you like. Y again on the newest one takes just that one off.</li>
-  <li><strong>Enter (A on a gamepad) to name it and make it</strong><br />Escape (B) drops the whole line.</li>
+  <li><strong>Enter (A on a gamepad) to name it and make it</strong><br />Escape (B) drops the whole line. Giving an existing name carries that constellation on.</li>
 </ol>
+<p>On a phone, set the pill's MODE to <strong>Y</strong>, tap the marks in turn, then press the confirm button by your character.</p>
 <p>Then Save it from the sidebar, with the marks; it comes back the next time you open the site.</p>
-<h4>Follow</h4>
-<dl class="terms">
-  <dt>Keyboard</dt><dd>Hold <code>Z</code> and press the arrow keys</dd>
-  <dt>Gamepad</dt><dd>Hold L2 and press the D-pad (the canvas's Z mode)</dd>
-</dl>
-<p>Holding Z shows where the mark you stand on is joined to, by name, up / down / left / right. Press a direction to jump there.</p>
-<p>On a gamepad, hold L2 and tilt the left stick: an arrow appears and the destination that way lights up. Let go of L2 to jump there (or press A while holding, and keep aiming from where you land).</p>
-<h4>On a phone</h4>
-<p>Open the pill and press <strong>Mode</strong>: it steps none → Z → Cmd → Y (the canvas’s mode lamp).</p>
-<ul>
-  <li><strong>Y</strong>: tap marks to tie the line to them, then name it with the confirm button by your character</li>
-  <li><strong>Z</strong>: drag your character to aim, and let go to jump along the joins</li>
-</ul>
 `,
         },
         {
-          id: 'pill-cursor',
-          title: 'Open the pill, and your character comes',
-          sub: 'Fold it, and the keys are the site’s again',
-          icon: 'panel-top-open',
-          color: '#22c55e',
+          id: 'z-mode',
+          title: 'Cross in Z mode',
+          sub: 'Where a mark is joined to, laid out around you',
+          icon: 'move',
+          color: '#f59e0b',
           body: `
-<p>With the browser extension, a small <strong>control pill</strong> floats on every site. It starts folded: only the way back to MyWant and the status sign show.</p>
+<p>While Z mode is on, the directions no longer hop to the nearest mark: they go <strong>where the mark you stand on is joined to</strong> by a constellation.</p>
+<h4>Turn it on</h4>
 <dl class="terms">
-  <dt>Open it</dt><dd>Your character appears on the site; the arrow keys and the gamepad move it</dd>
-  <dt>Fold it</dt><dd>Your character leaves the site; the arrow keys and <code>Enter</code> belong to the site again, as usual</dd>
+  <dt>Keyboard</dt><dd>Hold <code>Z</code></dd>
+  <dt>Gamepad</dt><dd>Hold L2</dd>
+  <dt>The pill</dt><dd>Press <strong>MODE</strong> to Z (each press steps none → Z → Cmd → Y) — it stays on, for a hand that cannot hold a button</dd>
 </dl>
-<p>Press the status sign to open or fold it. Once opened, it stays open on the next site too.</p>
-<p>When your character arrives some other way (from another tab, or with Save), the pill opens with it — a character on the page can always be steered.</p>
+<p>Z mode lays out <strong>destination chips</strong> around your character: the mark you stand on in the middle, and what it is joined to up, down, left and right, each with its constellation's name.</p>
+<h4>Cross</h4>
+<dl class="terms">
+  <dt>Press a direction</dt><dd>The arrow keys or the D-pad go to that chip</dd>
+  <dt>Aim and let go</dt><dd>Hold L2 and tilt the left stick: an amber arrow appears and the chip that way grows. Let go of L2 to go there (or press A while holding, and keep aiming from where you land)</dd>
+  <dt>Tap a chip</dt><dd>On a phone, tap the chip itself</dd>
+</dl>
+<p>The page scrolls up or down so where you land is near the middle of the screen.</p>
+<h4>Which way a chip goes</h4>
+<p>Each destination is put in the direction that best matches where it really is: something straight to the left goes left; something down-and-left goes down if left is taken. The board's Z mode uses the same rule.</p>
+<div class="box">
+  <p class="box-title"><i data-lucide="crosshair"></i>Cmd mode (aim)</p>
+  <p>While R2 is held (or the pill's MODE is on Cmd), the nearest mark each way shows as a green chip, and the left stick aims any way you like; let go to land on the nearest mark along that line — joined or not.</p>
+</div>
 `,
         },
         {
           id: 'pill-lamp',
-          title: 'Rest easy by the folded pill’s colour',
+          title: 'Rest easy by the pill’s chevron',
           sub: 'Not called, no need to come back',
           icon: 'lamp',
           color: '#f59e0b',
           body: `
-<p>The MyWant screen is not somewhere to keep watch; it is somewhere to come back to when you like. While you are on other sites, the <strong>colour of the folded pill’s status sign</strong> tells you whether you need to.</p>
+<p>The MyWant screen is not somewhere to keep watch; it is somewhere to come back to when you like. While you are on other sites, the <strong>colour of the small chevron (› / ‹) at the pill's right end</strong> tells you whether you need to.</p>
 <dl class="terms">
   <dt>Green</dt><dd>Nothing is waiting for you. No need to come back</dd>
-  <dt>Orange text</dt><dd>Something is waiting for you (an approval, a failure, a login…). Open the pill and its call button takes you there</dd>
+  <dt>Orange</dt><dd>Something is waiting for you (an approval, a failure, a login…). Open the pill and its call button takes you there</dd>
   <dt>Orange fill</dt><dd>You paused everything yourself</dd>
   <dt>Grey</dt><dd>MyWant cannot be reached</dd>
 </dl>
