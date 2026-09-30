@@ -180,7 +180,7 @@ ${shot('canvas.jpg', 'ミニマップを開いたところ')}
   <dt>Y</dt><dd>ヘッダのボタンへ</dd>
   <dt>B 長押し</dt><dd>向きと距離のガイドを出す</dd>
 </dl>
-<p>ピルの <strong>MODE</strong> のランプが、いまどのジャンプのモードかを示し、押すと切り替わります（詳しくは「Z モードで渡る」）。</p>
+<p>ピルの <strong>MODE</strong> のランプが、いまどのジャンプのモードかを示し、押すと切り替わります（詳しくは「線でつないで、たどる」）。</p>
 ${shot('help-gamepad.jpg', 'Help（? キー）の Gamepad Layout に、ボタンの図があります')}
 <div class="box">
   <p class="box-title"><i data-lucide="lock"></i>うっかり動かさないために</p>
@@ -312,17 +312,18 @@ ${shot('kata-detail.jpg', '型を押すと、何を組み合わせればよい�
       topics: [
         {
           id: 'pill-cursor',
-          title: 'ピルと Browse ／ Canvas',
-          sub: 'ページのまま見るか、盤面のように動くか',
+          title: 'いつものサイトを、キャラクターと歩く',
+          sub: 'ふつうに見るなら Browse、キーで動き回るなら Canvas',
           icon: 'panel-top-open',
           color: '#22c55e',
           body: `
-<p>ブラウザ拡張を入れると、どのサイトにも左下に小さな<strong>ピル</strong>が浮かびます。ふだんはページの邪魔をせず、押せばいつでも自分のキャラクターを呼べます。</p>
-${shot('tabs-pill.gif', 'BROWSE を押すと CANVAS に。マークが色付きで浮かび、右にミニマップが出ます')}
+<p>ブラウザ拡張を入れると、どのサイトにも左下に小さな<strong>ピル</strong>が浮かびます。ほかのサイトの上で MyWant を使いたくなったら、ここから始めます。</p>
+${shot('tabs-pill.gif', 'BROWSE を押すと CANVAS に。印が色付きで浮かび、右にミニマップが出ます')}
 <ul>
-  <li><strong>Browse</strong>：ページはいつものまま。ピルを広げている間だけ、キャラクターが来ます</li>
-  <li><strong>Canvas</strong>：ページをキャンバスのように歩けます。マークやつながりが見え、矢印キーやゲームパッドがキャラクターに届きます</li>
-  <li>ピルの右端の <code>›</code> で広げ、<code>‹</code> で畳みます。左上の <strong>MYWANT</strong> のタイルで MyWant に戻れます</li>
+  <li><strong>ふつうにサイトを見たい</strong>：<strong>Browse</strong> のままで。ピルを畳んでおけば、ページはいつもどおりです</li>
+  <li><strong>キーボードやゲームパッドで、ページを動き回りたい</strong>：<strong>BROWSE</strong> を押して <strong>CANVAS</strong> に。自分のキャラクターが現れ、矢印キーや十字ボタンで、よく使う部品へ飛んでいけます</li>
+  <li><strong>ボタンを使いたい</strong>：ピルの右端の <code>›</code> で広げると、SAVE などのボタンが出ます。<code>‹</code> で畳みます</li>
+  <li><strong>MyWant に戻りたい</strong>：左上の <strong>MYWANT</strong> のタイルを押します</li>
 </ul>
 <div class="box">
   <p class="box-title"><i data-lucide="smartphone"></i>スマホでは</p>
@@ -332,13 +333,13 @@ ${shot('tabs-pill.gif', 'BROWSE を押すと CANVAS に。マークが色付き�
         },
         {
           id: 'aura-jump',
-          title: 'オーラマークの間をジャンプ',
-          sub: 'よく使う部品に印をつけて、ひとっ飛び',
+          title: '近くの印へジャンプ',
+          sub: '押した向きの、いちばん近い印へ',
           icon: 'locate-fixed',
           color: '#a855f7',
           body: `
-<p>検索欄やボタンなど、いつも使う部品に<strong>オーラマーク</strong>をつけておくと、矢印キーひとつでマークからマークへ飛べます。長いページでも、マウスで探し回らずにすみます。</p>
-${shot('tabs-aura-jump.gif', 'Canvas で矢印キーを押すと、その向きのいちばん近いマークへ飛びます')}
+<p>検索欄やボタンなど、いつも使う部品に印（<strong>オーラマーク</strong>）をつけておくと、矢印キーを押すだけで、<strong>その向きでいちばん近い印</strong>へ飛べます。長いページでも、マウスで探し回らずにすみます。</p>
+${shot('tabs-aura-jump.gif', 'Canvas で矢印キーを押すと、その向きのいちばん近い印へ飛びます')}
 <ol class="steps">
   <li><strong>印をつける</strong><br />キャラクターを部品に重ねて <code>X</code>（スマホは長押し）。</li>
   <li><strong>飛ぶ</strong><br />Canvas なら矢印キーかゲームパッドの十字ボタン。Browse では <code>Cmd</code> を押しながら矢印キー。</li>
@@ -346,47 +347,39 @@ ${shot('tabs-aura-jump.gif', 'Canvas で矢印キーを押すと、その向き�
 </ol>
 <div class="box">
   <p class="box-title"><i data-lucide="save"></i>次に来たときも</p>
-  <p>ピルの SAVE で保存しておけば、そのサイトを次に開いたときもマークが戻ってきます。</p>
+  <p>ピルの SAVE で保存しておけば、そのサイトを次に開いたときも印が戻ってきます。</p>
 </div>
 `,
         },
         {
           id: 'aura-constellation',
-          title: 'マークを Constellation でつなぐ',
-          sub: 'いつもの順番を、線で結んでおく',
+          title: '線でつないで、たどる',
+          sub: 'Constellation と Z モード。近さではなく、決まった順に',
           icon: 'waypoints',
           color: '#f59e0b',
           body: `
-<p>「検索 → カート → 購入」のように、いつも同じ順に使う部品は、マーク同士を線で結んで <strong>Constellation</strong>（星座）にしておけます。キャンバスの Y 接続と同じやり方です。</p>
+<p>「検索 → カート → 購入」のように、いつも同じ順に使う部品は、印同士を線で結んで <strong>Constellation</strong>（星座）にしておけます。
+<strong>Z モード</strong>にすると、矢印キーが「いちばん近い印」ではなく<strong>線でつないだ先</strong>へ進みます。あいだにほかの印があっても飛び越えるので、決まった順番を迷わずたどれます。</p>
+<h4>つなぐ</h4>
 ${shot('tabs-constellation.gif', 'Y で線を伸ばしていき、Enter で名前を付けると Constellation ができます')}
 <ol class="steps">
-  <li><strong>はじめのマークで Y</strong><br />そこから線が伸びます。</li>
-  <li><strong>次のマークへ移って Y</strong><br />いくつでもつなげます。</li>
+  <li><strong>はじめの印で Y</strong><br />そこから線が伸びます。キャンバスの Y 接続と同じやり方です。</li>
+  <li><strong>次の印へ移って Y</strong><br />いくつでもつなげます。</li>
   <li><strong>Enter で名前を付ける</strong><br />やめるときは Escape。最後にピルの SAVE で保存します。</li>
 </ol>
-<p>つないだ線は、次の「Z モードで渡る」でたどれます。</p>
-<div class="box">
-  <p class="box-title"><i data-lucide="smartphone"></i>スマホでは</p>
-  <p>ピルの MODE を <strong>Y</strong> にして、マークを順にタップ。キャラクターのそばの「確定」を押します。</p>
-</div>
-`,
-        },
-        {
-          id: 'z-mode',
-          title: 'Z モードで渡る',
-          sub: 'つながった先へ、迷わず進む',
-          icon: 'move',
-          color: '#f59e0b',
-          body: `
-<p><strong>Z モード</strong>の間は、矢印キーが「いちばん近いマーク」ではなく「線でつながった先」へ進みます。キャラクターのまわりに行き先の札が出るので、どこへ行けるか一目で分かります。</p>
-${shot('tabs-z-mode.gif', 'Z モードで ← を押すと、Constellation に沿ってとなりのマークへ渡ります')}
+<h4>たどる（Z モード）</h4>
+${shot('tabs-z-mode.gif', 'Z モードでは、キャラクターのまわりに行き先の札が出て、← で線の先へ渡ります')}
 <ol class="steps">
   <li><strong>Z モードに入る</strong><br /><code>Z</code> かゲームパッドの L2 を押している間。ピルの <strong>MODE</strong> を Z にすれば、押し続けなくても入ったままです。</li>
-  <li><strong>札の向きへ進む</strong><br />矢印キーか十字ボタンで。スマホは札をタップします。</li>
+  <li><strong>札の向きへ進む</strong><br />キャラクターのまわりに行き先の札が出ます。矢印キーか十字ボタンで、その札へ。</li>
 </ol>
 <div class="box">
-  <p class="box-title"><i data-lucide="crosshair"></i>好きな向きへ狙う</p>
-  <p>ゲームパッドでは、L2（つながりに沿って）や R2（どのマークへでも）を押しながら左スティックで狙い、離すとその先へ飛べます。</p>
+  <p class="box-title"><i data-lucide="lamp"></i>ピルの MODE の文字</p>
+  <p><strong>Z</strong> は線をたどる、<strong>Cmd</strong> は近くの印へ飛ぶ、<strong>Y</strong> は線をつなぐ。押すたびに切り替わります。ゲームパッドなら、L2（線をたどる）や R2（近くの印へ）を押しながら左スティックで狙い、離すとその先へ飛べます。</p>
+</div>
+<div class="box">
+  <p class="box-title"><i data-lucide="smartphone"></i>スマホでは</p>
+  <p>つなぐときは MODE を Y にして印を順にタップし、キャラクターのそばの「確定」を。たどるときは MODE を Z にして、行き先の札をタップします。</p>
 </div>
 `,
         },

@@ -175,7 +175,7 @@ ${shot('canvas.jpg', 'With the minimap open')}
   <dt>Y</dt><dd>To the header's buttons</dd>
   <dt>Hold B</dt><dd>Show the direction and distance guide</dd>
 </dl>
-<p>The <strong>MODE</strong> lamp in the pill shows which jump mode is on, and pressing it switches (see "Cross in Z mode").</p>
+<p>The <strong>MODE</strong> lamp in the pill shows which jump mode is on, and pressing it switches (see "Tie marks, then follow them").</p>
 ${shot('help-gamepad.jpg', '"Gamepad Layout" in Help (the ? key) has a picture of the buttons')}
 <div class="box">
   <p class="box-title"><i data-lucide="lock"></i>So nothing moves by accident</p>
@@ -307,17 +307,18 @@ ${shot('kata-detail.jpg', 'Press a kata to see what to combine (its waza) and wh
       topics: [
         {
           id: 'pill-cursor',
-          title: 'The pill, Browse and Canvas',
-          sub: 'The page as it is, or moved through like the board',
+          title: 'Walk your usual sites with your character',
+          sub: 'Browse to just read; Canvas to move around with keys',
           icon: 'panel-top-open',
           color: '#22c55e',
           body: `
-<p>With the browser extension, a small <strong>pill</strong> floats at the bottom left of every site. It stays out of the page's way, and calls your character whenever you want it.</p>
+<p>With the browser extension, a small <strong>pill</strong> floats at the bottom left of every site. Whenever you want MyWant on another site, start here.</p>
 ${shot('tabs-pill.gif', 'Press BROWSE to switch to CANVAS: the marks light up and a minimap opens on the right')}
 <ul>
-  <li><strong>Browse</strong>: the page stays as it is. Your character comes only while the pill is open</li>
-  <li><strong>Canvas</strong>: walk the page like the board. Marks and their lines show, and the arrow keys and the gamepad move your character</li>
-  <li>The <code>›</code> at the pill's right end opens it and <code>‹</code> folds it. The <strong>MYWANT</strong> tile at the top left takes you back to MyWant</li>
+  <li><strong>Just read the site</strong>: stay in <strong>Browse</strong>. With the pill folded, the page is exactly as usual</li>
+  <li><strong>Move around the page with the keyboard or a gamepad</strong>: press <strong>BROWSE</strong> to switch to <strong>CANVAS</strong>. Your character appears, and the arrow keys or the D-pad take you to the parts you use</li>
+  <li><strong>Use the buttons</strong>: the <code>›</code> at the pill's right end opens it, with SAVE and the rest; <code>‹</code> folds it</li>
+  <li><strong>Go back to MyWant</strong>: press the <strong>MYWANT</strong> tile at the top left</li>
 </ul>
 <div class="box">
   <p class="box-title"><i data-lucide="smartphone"></i>On a phone</p>
@@ -327,13 +328,13 @@ ${shot('tabs-pill.gif', 'Press BROWSE to switch to CANVAS: the marks light up an
         },
         {
           id: 'aura-jump',
-          title: 'Jump between aura marks',
-          sub: 'Mark the parts you use, then hop',
+          title: 'Hop to the nearest mark',
+          sub: 'The closest mark the way you press',
           icon: 'locate-fixed',
           color: '#a855f7',
           body: `
-<p>Put an <strong>aura mark</strong> on the parts you always use — a search box, a button — and one arrow key hops from mark to mark. No hunting with the mouse, even on a long page.</p>
-${shot('tabs-aura-jump.gif', 'In Canvas, an arrow key hops to the nearest mark that way')}
+<p>Put a mark (an <strong>aura mark</strong>) on the parts you always use — a search box, a button — and an arrow key hops to <strong>the closest mark that way</strong>. No hunting with the mouse, even on a long page.</p>
+${shot('tabs-aura-jump.gif', 'In Canvas, an arrow key hops to the closest mark that way')}
 <ol class="steps">
   <li><strong>Mark</strong><br />Put your character over the part and press <code>X</code> (a long press on a phone).</li>
   <li><strong>Hop</strong><br />In Canvas, the arrow keys or the gamepad's D-pad. In Browse, hold <code>Cmd</code> with the arrows.</li>
@@ -347,41 +348,33 @@ ${shot('tabs-aura-jump.gif', 'In Canvas, an arrow key hops to the nearest mark t
         },
         {
           id: 'aura-constellation',
-          title: 'Join marks into a constellation',
-          sub: 'Tie the order you always follow',
+          title: 'Tie marks, then follow them',
+          sub: 'Constellations and Z mode: your order, not what is near',
           icon: 'waypoints',
           color: '#f59e0b',
           body: `
-<p>For parts you always use in the same order — search → cart → buy — tie the marks together with lines into a <strong>constellation</strong>. It works just like Y connect on the canvas.</p>
+<p>For parts you always use in the same order — search → cart → buy — tie the marks together with lines into a <strong>constellation</strong>.
+In <strong>Z mode</strong>, the arrow keys go <strong>where the line leads</strong> instead of to the closest mark, skipping over any marks in between, so your order is always one press away.</p>
+<h4>Tie</h4>
 ${shot('tabs-constellation.gif', 'Stretch the line with Y, then name it with Enter')}
 <ol class="steps">
-  <li><strong>Y on the first mark</strong><br />A line starts there.</li>
+  <li><strong>Y on the first mark</strong><br />A line starts there — just like Y connect on the canvas.</li>
   <li><strong>Move to the next mark and press Y</strong><br />Join as many as you like.</li>
   <li><strong>Enter to name it</strong><br />Escape drops it. Then press SAVE on the pill.</li>
 </ol>
-<p>Follow the lines with "Cross in Z mode", next.</p>
-<div class="box">
-  <p class="box-title"><i data-lucide="smartphone"></i>On a phone</p>
-  <p>Set the pill's MODE to <strong>Y</strong>, tap the marks in turn, then press the confirm button by your character.</p>
-</div>
-`,
-        },
-        {
-          id: 'z-mode',
-          title: 'Cross in Z mode',
-          sub: 'Follow the lines, never lost',
-          icon: 'move',
-          color: '#f59e0b',
-          body: `
-<p>In <strong>Z mode</strong>, the arrow keys go where your mark is joined to, instead of to the nearest mark. Destination chips appear around your character, so you can see at a glance where you can go.</p>
-${shot('tabs-z-mode.gif', 'In Z mode, ← crosses along the constellation to the next mark')}
+<h4>Follow (Z mode)</h4>
+${shot('tabs-z-mode.gif', 'In Z mode, destination chips appear around your character and ← crosses along the line')}
 <ol class="steps">
   <li><strong>Enter Z mode</strong><br />Hold <code>Z</code>, or L2 on a gamepad. Set the pill's <strong>MODE</strong> to Z and it stays on without holding anything.</li>
-  <li><strong>Go the chip's way</strong><br />With the arrow keys or the D-pad. On a phone, tap the chip.</li>
+  <li><strong>Go the chip's way</strong><br />Destination chips appear around your character. The arrow keys or the D-pad take you to one.</li>
 </ol>
 <div class="box">
-  <p class="box-title"><i data-lucide="crosshair"></i>Aim any way</p>
-  <p>On a gamepad, hold L2 (along the lines) or R2 (to any mark), aim with the left stick, and let go to land there.</p>
+  <p class="box-title"><i data-lucide="lamp"></i>The letters on the pill's MODE</p>
+  <p><strong>Z</strong> follows your lines, <strong>Cmd</strong> hops to the closest mark, <strong>Y</strong> ties new lines; each press switches to the next. On a gamepad, hold L2 (follow the lines) or R2 (closest mark), aim with the left stick, and let go to land there.</p>
+</div>
+<div class="box">
+  <p class="box-title"><i data-lucide="smartphone"></i>On a phone</p>
+  <p>To tie, set MODE to Y, tap the marks in turn, then press the confirm button by your character. To follow, set MODE to Z and tap a destination chip.</p>
 </div>
 `,
         },
